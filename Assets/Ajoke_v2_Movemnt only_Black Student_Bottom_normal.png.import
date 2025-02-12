@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bd6ixr0fphicx"
+path.s3tc="res://.godot/imported/Ajoke_v2_Movemnt only_Black Student_Bottom_normal.png-d55bee56d5fd91e27e5f57f6d2f62fc1.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "e2d548a063851e6d222568ebd9e21325"
+}
+
+[deps]
+
+source_file="res://Assets/Ajoke_v2_Movemnt only_Black Student_Bottom_normal.png"
+dest_files=["res://.godot/imported/Ajoke_v2_Movemnt only_Black Student_Bottom_normal.png-d55bee56d5fd91e27e5f57f6d2f62fc1.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Ajoke_v2_Movemnt only_Black Student_Bottom_normal.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
