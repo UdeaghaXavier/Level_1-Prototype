@@ -240,7 +240,7 @@ shadow_mesh = SubResource("ArrayMesh_v2h3j")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5dj6"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6jlgp"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_pjf7u"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2.13526, 2),
 "format": 34359742465,
@@ -268,7 +268,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AACAvwAAgL8AAIA/AACAvwAAgL8AAIA/AACAvwAAgL8AAIA/AACAvwAAgD8AAIA/AACAvwAAgD8AAIA/AACAvwAAgD8AAIA/AACAvwAAgL8AAIC/AACAvwAAgL8AAIC/AACAvwAAgL8AAIC/AACAvwAAgD8AAIC/AACAvwAAgD8AAIC/AACAvwAAgD8AAIC/AACAPwAAgL8AAIA/AACAPwAAgL8AAIA/AACAPwAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgL8AAIC/AACAPwAAgL8AAIC/AACAPwAAgL8AAIC/AACAPwAAgD8AAIC/AACAPwAAgD8AAIC/AACAPwAAgD8AAIC/AACAvwAAgL8KCgq/AACAvwAAgL8KCgq/AACAvwAAgL/oeR4/AACAvwAAgL/oeR4/AACAvwAAgD/oeR4/AACAvwAAgD/oeR4/AACAvwAAgD/oeR4/AACAvwAAgD8KCgq/AACAvwAAgD8KCgq/AACAvwAAgD8KCgq/AACAPwAAgL/oeR4/AACAPwAAgL/oeR4/AACAPwAAgL8KCgq/AACAPwAAgL8KCgq/AACAPzRQkT8KCgq/AACAPzRQkT8KCgq/AACAPzRQkT8KCgq/AACAPzRQkT/oeR4/AACAPzRQkT/oeR4/AACAPzRQkT/oeR4/AACAv4e3VL4AAIA/AACAv4e3VL4AAIA/AACAv4e3VL4AAIC/AACAv4e3VL4AAIC/AACAP4e3VL4AAIC/AACAP4e3VL4AAIC/AACAP4e3VL4AAIA/AACAP4e3VL4AAIA/AACAP4e3VL4KCgq/AACAP4e3VL4KCgq/AACAP4e3VL7oeR4/AACAP4e3VL7oeR4/AACAv4e3VL7oeR4/AACAv4e3VL7oeR4/AACAv4e3VL7oeR4/AACAv4e3VL4KCgq/AACAv4e3VL4KCgq/AACAv4e3VL4KCgq/xObrPgAAgL8AAIC/xObrPgAAgL8AAIC/xObrPgAAgD8AAIC/xObrPgAAgD8AAIC/xObrPgAAgD8AAIC/xObrPgAAgL8AAIA/xObrPgAAgL8AAIA/xObrPgAAgD8AAIA/xObrPgAAgD8AAIA/xObrPgAAgD8AAIA/xObrPjRQkT8KCgq/xObrPjRQkT8KCgq/xObrPjRQkT8KCgq/xObrPjRQkT8KCgq/xObrPjRQkT8KCgq/xObrPjRQkT/oeR4/xObrPjRQkT/oeR4/xObrPjRQkT/oeR4/xObrPjRQkT/oeR4/xObrPjRQkT/oeR4/xObrPgAAgL8KCgq/xObrPgAAgL/oeR4/xObrPoe3VL4AAIA/xObrPoe3VL4AAIC/wyIpP4e3VL4KCgq/wyIpP4e3VL4KCgq/wyIpP4e3VL4KCgq/wyIpP4e3VL7oeR4/wyIpP4e3VL7oeR4/wyIpP4e3VL7oeR4//3//f/9/////fwAA////vwAA/3//f////3//f/9///8oe5foYQYgvQAA/3//f/////////9/////fwAA////vwAA/3//f/////////9///9Hawb7VAY8vQAA/3//f////3//f/9/////fwAA////v////3//f////3//f/9/////f3XeAAD/v////3//f/////////9/////fwAA////v////3//f/////////9///8Mnf//AAD/v////3//f////38AAP///78AAP9//3////9/AAD+//+/AAD/f/9/////////2QqSuih7l+i+Bhu9AAD/f/9/////f/9/zxnnTEdrBvsQBjW9AAD/f/9/////fwAA////v////3//f////38AAP///7////9//3///wyd//8AAP+//3///wAA/7////9//3////9/dd4AAP+//3///wAA/7////9//3////9//3//f///AAD/f/9//////////3///wAA/3//f/////////9///////9//3////9//3//f///////f/9/////f///////v////3//f////3///////7////9//3/////////ZCpK6/3///////78AAP9//3////9//390I7pR/3///////78AAP9//3//////////f////38AAP///7///////3///wyd//8AAP+/R2sG+7cF5Lz/f/9//3////9/AAD+//+//3//f/9/////f3XeAAD/vyh7l+hzBcm8/3//f9kKbEUMnf//AAD/v/9///8AAP+/R2sG+74FuLyXEGhv////v//////ZCpK6/3913gAA/7//f///AAD/vyh7l+iEBei8lxBob////7//fwAA////v/9/AAD+//+//3//f/9//////////3////9//3/FFmJL/3///////7+XEGhv////v/////////+//3///////7+XEGhv////vw==")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_6jlgp")
+shadow_mesh = SubResource("ArrayMesh_pjf7u")
 
 [node name="greybox house modular" type="Node3D"]
 

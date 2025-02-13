@@ -9,6 +9,6 @@ func _ready() -> void:
 	
 func _input(event):
 	if event is InputEventMouseMotion:
-		pivot.rotate_y(deg_to_rad(event.relative.x * sens))
+		pivot.rotate_y(deg_to_rad(event.relative.x * -sens))
 		rotate_x(deg_to_rad(event.relative.y * sens))
 		rotation.x = clamp(rotation.x, deg_to_rad(-90), deg_to_rad(45))
