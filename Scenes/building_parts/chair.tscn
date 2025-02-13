@@ -62,7 +62,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456067, 0.0024147)
 shape = SubResource("BoxShape3D_limnd")
 
 [node name="pivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.718715, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.464089, -0.00522125, 0)
+
+[node name="face_pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50261, 0, 0)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
