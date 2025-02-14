@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Player" load_steps=2 format=3 uid="uid://c3pymhcunjbjy"]
+
+[ext_resource type="Script" path="res://player_data.gd" id="1_uskxa"]
+
+[resource]
+script = ExtResource("1_uskxa")
+spd_mul = 1.5
+walk_spd = 5.0
+run_spd = null
+crouch_spd = null

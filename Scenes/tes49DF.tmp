@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://h5dofkjh32ht"]
+
+[ext_resource type="PackedScene" uid="uid://bmhkm0eo01xpd" path="res://Scenes/Player/ajoke.tscn" id="1_hkwns"]
+[ext_resource type="PackedScene" uid="uid://siyxlwya888c" path="res://Scenes/building_parts/door.tscn" id="2_vttyf"]
+[ext_resource type="PackedScene" uid="uid://jmvm8p1m8ah8" path="res://Scenes/building_parts/chair.tscn" id="3_bltaq"]
+[ext_resource type="PackedScene" uid="uid://cu3akcv500ufv" path="res://Scenes/props/movables_box_test.tscn" id="4_rehfd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hwl6g"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_uhu34"]
+sky_material = SubResource("ProceduralSkyMaterial_hwl6g")
+
+[sub_resource type="Environment" id="Environment_i2vto"]
+background_mode = 2
+sky = SubResource("Sky_uhu34")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xwo0p"]
+size = Vector2(100, 100)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7o2dx"]
+data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
+
+[node name="test" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i2vto")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_xwo0p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7o2dx")
+
+[node name="Ajoke" parent="." instance=ExtResource("1_hkwns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.975694, 0, 0)
+
+[node name="chair" parent="." instance=ExtResource("3_bltaq")]
+
+[node name="Door" parent="." instance=ExtResource("2_vttyf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.25437, 0, -0.210077)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("4_rehfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96878, 0.5, -0.0169108)

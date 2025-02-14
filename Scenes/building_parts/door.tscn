@@ -119,6 +119,7 @@ _data = {
 radius = 2.02458
 
 [node name="Door" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_fp0pk")
 
 [node name="Door" type="Node3D" parent="."]
@@ -134,7 +135,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_qs5dx")
 
 [node name="door" type="Node3D" parent="Door"]
-transform = Transform3D(-2.18557e-08, 0.1, 4.37114e-08, 0.5, 4.37114e-09, 0, 1.91069e-15, -8.74228e-09, 0.5, 0, 1.80445, 0.830945)
+transform = Transform3D(-1.81e-06, 0.1, -1.26759e-06, 0.5, 3.61999e-07, 0, -4.58867e-12, 2.53518e-07, 0.5, 0, 1.80445, 0.830945)
 
 [node name="door1" type="MeshInstance3D" parent="Door/door"]
 transform = Transform3D(0.277751, 0, 0, 0, 0.0878935, 0, 0, 0, 3.46638, 0, 0, -13.267)

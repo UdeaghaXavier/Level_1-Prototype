@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu3akcv500ufv"]
+
+[ext_resource type="Script" path="res://Scripts/props/box.gd" id="1_67moc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ktcyu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lan08"]
+
+[node name="box" type="CharacterBody3D" groups=["box"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_67moc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ktcyu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_lan08")
+
+[node name="Pivots" type="Node3D" parent="."]
+
+[node name="1" type="Node3D" parent="Pivots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="2" type="Node3D" parent="Pivots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="3" type="Node3D" parent="Pivots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="4" type="Node3D" parent="Pivots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)

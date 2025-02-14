@@ -38,7 +38,7 @@ shadow_mesh = SubResource("ArrayMesh_6jlgp")
 size = Vector3(1.48563, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_limnd"]
-size = Vector3(0.945374, 0.91251, 0.94059)
+size = Vector3(0.434601, 0.91251, 0.94059)
 
 [node name="chair" type="RigidBody3D"]
 script = ExtResource("1_akexg")
@@ -58,11 +58,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.298349, 0, 0)
 shape = SubResource("BoxShape3D_cb4fh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456067, 0.0024147)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.255386, 0.456067, 0.0024147)
 shape = SubResource("BoxShape3D_limnd")
 
 [node name="pivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.464089, -0.00522125, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0259098, -0.00522125, 0)
 
 [node name="face_pivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50261, 0, 0)
