@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=4 uid="uid://xsqusdlh5omi"]
+
+[ext_resource type="Script" path="res://scripts/building_parts/lever.gd" id="1_l37n1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3jnf"]
+resource_name = "doors for green"
+cull_mode = 2
+albedo_color = Color(0.186482, 0.484585, 0.0106978, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6n30b"]
+_surfaces = [{
+"aabb": AABB(-0.236206, -2.91508, -0.236206, 0.472412, 5.83017, 0.472427),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAFAAMAAgAEAAUABAAHAAUABAAGAAcABgAJAAcABgAIAAkACAALAAkACAAKAAsACgANAAsACgAMAA0ABQABAAMAAQANAA8ADQAJAAsACQAFAAcABQANAAEADQAFAAkADAAPAA0ADAAOAA8ADgABAA8ADgAAAAEADgACAAAAAgAGAAQABgAKAAgACgAOAAwADgAGAAIABgAOAAoA"),
+"lods": [0.090953, PackedByteArray("AAADAAEAAAACAAMAAgAFAAMAAgAEAAUABAAJAAUABAAKAAkACgANAAkACgAMAA0ADAABAA0ADAAAAAEABQABAAMABQANAAEADQAFAAkADAACAAAADAAEAAIABAAMAAoA"), 0.179022, PackedByteArray("AAAFAAEAAAAEAAUABAANAAUABAAMAA0ABQANAAEADAABAA0ADAAAAAEADAAEAAAA"), 0.368239, PackedByteArray("AAAFAAEAAAAMAAUADAABAAUADAAAAAEA")],
+"name": "doors for green",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("/38AAAAAAAD/f///AAAAAIHaAAB9JQAAgdr//30lAAD//wAA/38AAP//////fwAAgdoAAIHaAACB2v//gdoAAP9/AAD//wAA/3//////AAB9JQAAgdoAAH0l//+B2gAAAAAAAP9/AAAAAP///38AAH0lAAB9JQAAfSX//30lAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n81du"]
+resource_name = "Hideout test glb_Cylinder"
+_surfaces = [{
+"aabb": AABB(-0.236206, -2.91508, -0.236206, 0.472412, 5.83017, 0.472427),
+"attribute_data": PackedByteArray("/7+Ogv///38AAP9//z+Ogv//AAAAAAAAcOuNlP/f/3//3/9/cWuNlP/fAAD/3wAAb/3/v/+//3//v/9/cH3/v/+/AAD/vwAAcOtw6/+f/3//n/9/cWtw6/+fAAD/nwAA/79v/f9//3//f/9//z9v/f9/AAD/fwAAjZRw6/9f/3//X/9/jhRw6/9fAAD/XwAAjoL/v/8//3//P/9/jwL/v/8/AAD/PwAAjZSNlP8f/3//H/9/jhSNlP8fAAD/HwAA////fwAA/38AAAAA/78AAP+/AAD/P/9//z//f/+//3//v/9//78AAP+/AAD/P/9//z//f/8/AAD/PwAAAAAAAP/f/3//3wAA/7//f/+//3//vwAA/38AAP9/AAD/X/9//1//f/8//3//P/9//z8AAA=="),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("AQAKAAQAAQAHAAoACAARAAsACAAOABEADQAXABAADQAUABcAEwAcABYAEwAZABwAGgAiAB0AGgAfACIAIAAoACMAIAAlACgADwADAAkAAwAnAC0AJwAbACEAGwAPABUADwAnAAMAJwAPABsAJgAvACkAJgAsAC8AKwAFAC4AKwACAAUAKgAGAAAABgASAAwAEgAeABgAHgAqACQAKgASAAYAEgAqAB4A"),
+"lods": [0.090953, PackedByteArray("AQBBAAQAAQBAAEEAQABEAEEAQABCAEQAQwBFABAAQwBHAEUARwAoAEYASABJACgASQA/AEsASgACAD8ADwADAAkADwAnAAMAJwAPABsAJAAGAAAAJAAMAAYADAAkAB4A"), 0.179022, PackedByteArray("AQA5AAQAAQA3ADkAOAA9ADoAOAA7AD0ADwAnAAMAPAAFAD4APAACAAUAJAAMAAAA"), 0.368239, PackedByteArray("AQAzAAQAMAA1ABAAJQAyADQANgAxAAUA")],
+"material": SubResource("StandardMaterial3D_x3jnf"),
+"name": "doors for green",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 76,
+"vertex_data": PackedByteArray("/38AAAAA/z//fwAAAAD+7/9/AAAAAP7v/3///wAA/7//f///AAD+7/9///8AAP7vgdoAAH0l/z+B2gAAfSX+74HaAAB9Jf/Pgdr//30l/7+B2v//fSX+74Ha//99Jf/P//8AAP9//z///wAA/3//r///AAD/f//P//////9//7///////3//r///////f//PgdoAAIHa/z+B2gAAgdr/j4HaAACB2v+vgdr//4Ha/7+B2v//gdr/j4Ha//+B2v+v/38AAP///z//fwAA////j/9/AAD///+P/3///////7//f///////j/9///////+PfSUAAIHa/z99JQAAgdr/j30lAACB2gCwfSX//4Ha/799Jf//gdr/j30l//+B2gCwAAAAAP9//z8AAAAA/38AsAAAAAD/f/7PAAD///9//78AAP///38AsAAA////f/7PfSUAAH0l/z99JQAAfSX+730lAAB9Jf7PfSX//30l/799Jf//fSX+730l//99Jf7P/38AAAAA////fwAAAABA6f9///8AAP////////9/GMX//////3+B0QAAAAD/f9PUAAAAAP9/HcT//wAA/38twv//AAD/f7Sh//////9/SMb//////39aoQAAAAD/f/ugAAAAAP9/ocUAAP///39boQAA////fxvB/3///wAAKOiB2gAAfSVp44Ha//99JTjq//8AAP9//7///wAA/39Xqf//////f/+//3//////XpT/f/////9Jkn0lAACB2piMfSUAAIHa/qIAAAAA/3+cuAAAAAD/f1vHAAD///9/R8AAAP9//38AAP9///////9//38AAP9///8AAP9//38AAP9/AAD+//5//38AAP9/AAAAAP9//38AAP9/AAD///9//38AAP9/AAAAAP9//38AAP9/AAD+//9//38AAP9/AAAAAP9//38AAP9///////9//38AAP9///8AAP9//3////9////+//5//3////9///8AAP9//3////9///////9//3////9///8AAP9//3////9////+//9//3////9/////fwAA/3////9/////fwAA/38AAP9/////f////38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f////38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6n30b")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fqs3e"]
+radius = 5.37247
+
+[sub_resource type="Animation" id="Animation_7tidx"]
+resource_name = "on"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(0.307786, 0.297302),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5708)]
+}
+
+[sub_resource type="Animation" id="Animation_k5sx1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fpx3m"]
+_data = {
+"RESET": SubResource("Animation_k5sx1"),
+"on": SubResource("Animation_7tidx")
+}
+
+[node name="lever" type="Node3D"]
+script = ExtResource("1_l37n1")
+
+[node name="pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, -2.38419e-07, 0)
+
+[node name="elevator door lever" type="MeshInstance3D" parent="pivot"]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -1.99221, 2.17009, 0)
+mesh = SubResource("ArrayMesh_n81du")
+skeleton = NodePath("")
+
+[node name="player_detector" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player_detector"]
+shape = SubResource("SphereShape3D_fqs3e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fpx3m")
+}
+
+[connection signal="body_entered" from="player_detector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="player_detector" to="." method="_on_player_detector_body_exited"]

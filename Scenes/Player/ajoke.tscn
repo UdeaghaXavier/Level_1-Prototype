@@ -13,7 +13,7 @@ radius = 0.188
 height = 0.414601
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_554mr"]
-radius = 0.989357
+radius = 0.989355
 height = 1.97871
 
 [node name="Ajoke" type="CharacterBody3D" groups=["player"]]

@@ -41,6 +41,7 @@ size = Vector3(1.48563, 1, 1)
 size = Vector3(0.434601, 0.91251, 0.94059)
 
 [node name="chair" type="RigidBody3D"]
+gravity_scale = 0.0
 script = ExtResource("1_akexg")
 
 [node name="chair" type="MeshInstance3D" parent="."]

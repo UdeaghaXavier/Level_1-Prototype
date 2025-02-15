@@ -22,8 +22,7 @@ func update_collider():
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		if body.is_sitting():
-			velocity += get_gravity() * delta
+		velocity += get_gravity() * delta
 	
 	if not body.opening_door and body.sit_state != 1:
 		move()
@@ -115,7 +114,7 @@ func get_vel():
 		spd = data.walk_spd * data.spd_mul
 	
 	vel.x = direction.x * spd
-	vel.y = 0
+	vel.y = velocity.y
 	vel.z = direction.z * spd
 	
 	return vel

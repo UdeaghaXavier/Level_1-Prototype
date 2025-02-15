@@ -28,4 +28,4 @@ shadow_enabled = true
 [node name="Hideout test glb" parent="." instance=ExtResource("1_owbsu")]
 
 [node name="Ajoke" parent="." instance=ExtResource("2_bb4xg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7665, 27.7657, 25.9054)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1392, 28.8106, 33.6195)

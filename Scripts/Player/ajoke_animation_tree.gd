@@ -10,6 +10,7 @@ var opening_door = false
 var crouching = false
 var crawling = false
 var pushing = false
+var locked_door = false
 
 func _ready() -> void:
 	anim_tree.active = true
@@ -53,7 +54,10 @@ func play_anim(anim):
 	
 func anim_handler():
 	if opening_door:
-		play_anim("door")
+		if not locked_door:
+			play_anim("door")
+		else:
+			play_anim("locked_door")
 	elif sit_state != 0:
 		change_anim_state_to("sit")
 	elif crouching:
