@@ -1,10 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://h5dofkjh32ht"]
+[gd_scene load_steps=8 format=3 uid="uid://h5dofkjh32ht"]
 
-[ext_resource type="PackedScene" uid="uid://bmhkm0eo01xpd" path="res://Scenes/Player/ajoke.tscn" id="1_hkwns"]
-[ext_resource type="PackedScene" uid="uid://siyxlwya888c" path="res://Scenes/building_parts/door.tscn" id="2_vttyf"]
-[ext_resource type="PackedScene" uid="uid://jmvm8p1m8ah8" path="res://Scenes/building_parts/chair.tscn" id="3_bltaq"]
-[ext_resource type="PackedScene" uid="uid://cu3akcv500ufv" path="res://Scenes/props/box.tscn" id="4_rehfd"]
-[ext_resource type="PackedScene" uid="uid://43fffogeoerm" path="res://Scenes/props/key.tscn" id="5_w3dgt"]
+[ext_resource type="PackedScene" uid="uid://bmhkm0eo01xpd" path="res://Scenes/Entities/ajoke.tscn" id="1_hkwns"]
+[ext_resource type="PackedScene" uid="uid://cdx6846hvx8l" path="res://Scenes/Entities/enemy.tscn" id="2_l3j41"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hwl6g"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -46,13 +43,5 @@ shape = SubResource("ConcavePolygonShape3D_7o2dx")
 [node name="Ajoke" parent="." instance=ExtResource("1_hkwns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.975694, 0, 0)
 
-[node name="chair" parent="." instance=ExtResource("3_bltaq")]
-
-[node name="Door" parent="." instance=ExtResource("2_vttyf")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.25437, 0, -0.210077)
-
-[node name="CharacterBody3D" parent="." instance=ExtResource("4_rehfd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96878, 0.5, -0.0169108)
-
-[node name="key" parent="." instance=ExtResource("5_w3dgt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0641527, 0.101797, -2.18306)
+[node name="Enemy" parent="." instance=ExtResource("2_l3j41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42376, 0.94754, 0.116753)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://nxds2jx1tpdd"]
+[gd_scene load_steps=7 format=3 uid="uid://nxds2jx1tpdd"]
 
 [ext_resource type="PackedScene" uid="uid://odx82ukds3s3" path="res://Assets/Converted/Hideout test.tscn" id="1_owbsu"]
-[ext_resource type="PackedScene" uid="uid://bmhkm0eo01xpd" path="res://Scenes/Player/ajoke.tscn" id="2_bb4xg"]
+[ext_resource type="PackedScene" uid="uid://bmhkm0eo01xpd" path="res://Scenes/Entities/ajoke.tscn" id="2_bb4xg"]
+[ext_resource type="PackedScene" uid="uid://cyc420n5lxyjd" path="res://Scenes/UI/HUD.tscn" id="3_fdleq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q68oj"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -28,4 +29,9 @@ shadow_enabled = true
 [node name="Hideout test glb" parent="." instance=ExtResource("1_owbsu")]
 
 [node name="Ajoke" parent="." instance=ExtResource("2_bb4xg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1392, 28.8106, 33.6195)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1392, 31.7702, 33.6195)
+
+[node name="HUD" parent="." instance=ExtResource("3_fdleq")]
+
+[connection signal="interactable_entered" from="Ajoke" to="HUD" method="_on_ajoke_interactable_entered"]
+[connection signal="interactable_exited" from="Ajoke" to="HUD" method="_on_ajoke_interactable_exited"]

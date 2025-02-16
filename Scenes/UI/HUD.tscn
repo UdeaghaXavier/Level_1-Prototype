@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyc420n5lxyjd"]
+
+[ext_resource type="Script" path="res://Scenes/UI/hud.gd" id="1_he0yv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aovie"]
+bg_color = Color(0.6, 0.6, 0.6, 0.121569)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+shadow_color = Color(0, 0, 0, 0.423529)
+shadow_size = 1
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="SystemFont" id="SystemFont_v6mwr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ceyho"]
+font = SubResource("SystemFont_v6mwr")
+font_size = 20
+font_color = Color(0.775063, 0.775063, 0.775063, 1)
+outline_size = 1
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_he0yv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 768.0
+offset_top = 37.0
+offset_right = 1125.0
+offset_bottom = 111.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_aovie")
+text = "Hello"
+label_settings = SubResource("LabelSettings_ceyho")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true

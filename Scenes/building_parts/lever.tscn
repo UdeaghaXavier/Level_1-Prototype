@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://xsqusdlh5omi"]
+[gd_scene load_steps=10 format=4 uid="uid://xsqusdlh5omi"]
 
 [ext_resource type="Script" path="res://scripts/building_parts/lever.gd" id="1_l37n1"]
 
@@ -42,8 +42,26 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6n30b")
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_taeyg"]
+data = PackedVector3Array(0, -2.9151, -0.2362, 0.167, 2.9151, -0.167, 0, 2.9151, -0.2362, 0, -2.9151, -0.2362, 0.167, -2.9151, -0.167, 0.167, 2.9151, -0.167, 0.167, -2.9151, -0.167, 0.2362, 2.9151, 0, 0.167, 2.9151, -0.167, 0.167, -2.9151, -0.167, 0.2362, -2.9151, 0, 0.2362, 2.9151, 0, 0.2362, -2.9151, 0, 0.167, 2.9151, 0.167, 0.2362, 2.9151, 0, 0.2362, -2.9151, 0, 0.167, -2.9151, 0.167, 0.167, 2.9151, 0.167, 0.167, -2.9151, 0.167, 0, 2.9151, 0.2362, 0.167, 2.9151, 0.167, 0.167, -2.9151, 0.167, 0, -2.9151, 0.2362, 0, 2.9151, 0.2362, 0, -2.9151, 0.2362, -0.167, 2.9151, 0.167, 0, 2.9151, 0.2362, 0, -2.9151, 0.2362, -0.167, -2.9151, 0.167, -0.167, 2.9151, 0.167, -0.167, -2.9151, 0.167, -0.2362, 2.9151, 0, -0.167, 2.9151, 0.167, -0.167, -2.9151, 0.167, -0.2362, -2.9151, 0, -0.2362, 2.9151, 0, 0.2362, 2.9151, 0, 0, 2.9151, -0.2362, 0.167, 2.9151, -0.167, 0, 2.9151, -0.2362, -0.2362, 2.9151, 0, -0.167, 2.9151, -0.167, -0.2362, 2.9151, 0, 0, 2.9151, 0.2362, -0.167, 2.9151, 0.167, 0, 2.9151, 0.2362, 0.2362, 2.9151, 0, 0.167, 2.9151, 0.167, 0.2362, 2.9151, 0, -0.2362, 2.9151, 0, 0, 2.9151, -0.2362, -0.2362, 2.9151, 0, 0.2362, 2.9151, 0, 0, 2.9151, 0.2362, -0.2362, -2.9151, 0, -0.167, 2.9151, -0.167, -0.2362, 2.9151, 0, -0.2362, -2.9151, 0, -0.167, -2.9151, -0.167, -0.167, 2.9151, -0.167, -0.167, -2.9151, -0.167, 0, 2.9151, -0.2362, -0.167, 2.9151, -0.167, -0.167, -2.9151, -0.167, 0, -2.9151, -0.2362, 0, 2.9151, -0.2362, -0.167, -2.9151, -0.167, 0.167, -2.9151, -0.167, 0, -2.9151, -0.2362, 0.167, -2.9151, -0.167, 0.167, -2.9151, 0.167, 0.2362, -2.9151, 0, 0.167, -2.9151, 0.167, -0.167, -2.9151, 0.167, 0, -2.9151, 0.2362, -0.167, -2.9151, 0.167, -0.167, -2.9151, -0.167, -0.2362, -2.9151, 0, -0.167, -2.9151, -0.167, 0.167, -2.9151, 0.167, 0.167, -2.9151, -0.167, 0.167, -2.9151, 0.167, -0.167, -2.9151, -0.167, -0.167, -2.9151, 0.167)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_fqs3e"]
 radius = 5.37247
+
+[sub_resource type="Animation" id="Animation_k5sx1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_7tidx"]
 resource_name = "on"
@@ -59,21 +77,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.307786, 0.297302),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5708)]
-}
-
-[sub_resource type="Animation" id="Animation_k5sx1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("pivot:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fpx3m"]
@@ -92,6 +95,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, -2.38419e-07, 0)
 transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -1.99221, 2.17009, 0)
 mesh = SubResource("ArrayMesh_n81du")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pivot/elevator door lever"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pivot/elevator door lever/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_taeyg")
 
 [node name="player_detector" type="Area3D" parent="."]
 collision_layer = 0

@@ -1,15 +1,18 @@
-[gd_scene load_steps=17 format=4 uid="uid://qhdsglqwx27h"]
+[gd_scene load_steps=18 format=4 uid="uid://qhdsglqwx27h"]
 
 [sub_resource type="GDScript" id="GDScript_dsdq4"]
 resource_name = "elevator"
 script/source = "extends Node3D
 
-var state = \"closed\"
+@export var state = \"closed\"
 var player:CharacterBody3D = null
 
 signal player_ready_to_descend
 
 func _physics_process(delta: float) -> void:
+	if state == \"open\":
+		$AnimationPlayer.play(\"close\")
+
 	if player and state==\"closed\":
 		player_ready_to_descend.emit()
 
@@ -20,6 +23,12 @@ func _on_player_detector_body_entered(body: Node3D) -> void:
 func _on_player_detector_body_exited(body: Node3D) -> void:
 	if body.is_in_group(\"player\"):
 		player = null
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == \"close\":
+		state = \"closed\"
+	elif anim_name == \"open\":
+		state = \"open\"
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mwyv"]
@@ -139,33 +148,6 @@ data = PackedVector3Array(4.756, -7.4488, -0.0001, -4.756, 7.4488, 0.0001, 4.756
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_exay6"]
 data = PackedVector3Array(19.0245, -7.4488, 14.4596, 19.0239, 7.4488, -7.2302, 19.0245, 7.4488, 14.4596, 19.0245, -7.4488, 14.4596, 19.0239, -7.4488, -7.2302, 19.0239, 7.4488, -7.2302, -9.5125, -7.4488, -7.2302, -19.0242, 7.4488, -7.2299, -9.5125, 7.4488, -7.2302, -9.5125, -7.4488, -7.2302, -19.0242, -7.4488, -7.2299, -19.0242, 7.4488, -7.2299, -19.0242, -7.4488, -7.2299, -19.0242, 7.4488, 14.4603, -19.0242, 7.4488, -7.2299, -19.0242, -7.4488, -7.2299, -19.0242, -7.4488, 14.4603, -19.0242, 7.4488, 14.4603, 19.0239, 7.4488, -7.2302, -19.0242, 7.4488, 14.4603, 19.0245, 7.4488, 14.4596, -19.0242, 7.4488, 14.4603, -9.5125, 7.4488, -7.2302, -19.0242, 7.4488, -7.2299, -9.5125, 7.4488, -7.2302, 19.0239, 7.4488, -7.2302, 9.5116, 7.4488, -7.2302, -19.0242, 7.4488, 14.4603, 19.0239, 7.4488, -7.2302, -9.5125, 7.4488, -7.2302, 19.0239, -7.4488, -7.2302, -9.5125, -7.4488, -7.2302, 9.5116, -7.4488, -7.2302, -9.5125, -7.4488, -7.2302, -19.0242, -7.4488, 14.4603, -19.0242, -7.4488, -7.2299, -19.0242, -7.4488, 14.4603, 19.0239, -7.4488, -7.2302, 19.0245, -7.4488, 14.4596, -9.5125, -7.4488, -7.2302, 19.0239, -7.4488, -7.2302, -19.0242, -7.4488, 14.4603, 19.0239, -7.4488, -7.2302, 9.5116, 7.4488, -7.2302, 19.0239, 7.4488, -7.2302, 19.0239, -7.4488, -7.2302, 9.5116, -7.4488, -7.2302, 9.5116, 7.4488, -7.2302, -19.0242, 7.4488, 14.4603, 19.0245, -7.4488, 14.4596, 19.0245, 7.4488, 14.4596, -19.0242, 7.4488, 14.4603, -19.0242, -7.4488, 14.4603, 19.0245, -7.4488, 14.4596)
 
-[sub_resource type="Animation" id="Animation_tvpen"]
-resource_name = "open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("elevator/elev door 2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(4.755, 0, -7.15326), Vector3(14.256, 0, -7.153)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("elevator/elev door 1:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-4.75699, 0, -7.16968), Vector3(-14.279, 0, -7.17)]
-}
-
 [sub_resource type="Animation" id="Animation_cvhpo"]
 length = 0.001
 tracks/0/type = "value"
@@ -193,14 +175,70 @@ tracks/1/keys = {
 "values": [Vector3(-4.75699, 0, -7.16968)]
 }
 
+[sub_resource type="Animation" id="Animation_rujyb"]
+resource_name = "close"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("elevator/elev door 1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-14.2868, 0, -7.16968), Vector3(-4.72265, 0, -7.16968)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("elevator/elev door 2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(14.3098, 0, -7.15326), Vector3(4.81081, 0, -7.15326)]
+}
+
+[sub_resource type="Animation" id="Animation_tvpen"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("elevator/elev door 2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.755, 0, -7.15326), Vector3(14.256, 0, -7.153)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("elevator/elev door 1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-4.75699, 0, -7.16968), Vector3(-14.279, 0, -7.17)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6mrer"]
 _data = {
 "RESET": SubResource("Animation_cvhpo"),
+"close": SubResource("Animation_rujyb"),
 "open": SubResource("Animation_tvpen")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6t4b1"]
-size = Vector3(37.9771, 14.5551, 20.5565)
+size = Vector3(37.9771, 14.8841, 21.5751)
 
 [node name="Elevator" type="Node3D"]
 script = SubResource("GDScript_dsdq4")
@@ -215,6 +253,7 @@ mesh = SubResource("ArrayMesh_8piro")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="elevator/elev door 1"]
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="elevator/elev door 1/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ig0bd")
@@ -225,6 +264,7 @@ mesh = SubResource("ArrayMesh_gxour")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="elevator/elev door 2"]
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="elevator/elev door 2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tp44x")
@@ -244,8 +284,9 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player_detector"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0456543, -0.14389, 4.06511)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0456543, 0.0206183, 3.5558)
 shape = SubResource("BoxShape3D_6t4b1")
 
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="player_detector" to="." method="_on_player_detector_body_entered"]
 [connection signal="body_exited" from="player_detector" to="." method="_on_player_detector_body_exited"]

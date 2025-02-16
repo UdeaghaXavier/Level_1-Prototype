@@ -1,4 +1,14 @@
-[gd_scene load_steps=5 format=4 uid="uid://43fffogeoerm"]
+[gd_scene load_steps=6 format=4 uid="uid://43fffogeoerm"]
+
+[sub_resource type="GDScript" id="GDScript_8yivj"]
+resource_name = "key"
+script/source = "extends StaticBody3D
+
+@onready var data = Props.new()
+
+func _ready() -> void:
+	data._name = \"key\"
+"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5nf8"]
 resource_name = "key"
@@ -46,6 +56,7 @@ size = Vector3(0.205322, 0.0434113, 0.554329)
 [node name="key" type="StaticBody3D" groups=["key"]]
 collision_layer = 4
 collision_mask = 0
+script = SubResource("GDScript_8yivj")
 
 [node name="key_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.071, 0, 0, 0, 0.071, 0, 0, 0, 0.071, 0, 0, 0)

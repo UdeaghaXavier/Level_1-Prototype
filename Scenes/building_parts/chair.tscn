@@ -41,6 +41,8 @@ size = Vector3(1.48563, 1, 1)
 size = Vector3(0.434601, 0.91251, 0.94059)
 
 [node name="chair" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_akexg")
 

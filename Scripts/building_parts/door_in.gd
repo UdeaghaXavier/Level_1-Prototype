@@ -3,6 +3,11 @@ extends Node3D
 var player: CharacterBody3D
 var initial_player_position
 
+@onready var data = Props.new()
+
+func _ready() -> void:
+	data._name = "door_out"
+
 func _process(delta: float) -> void:
 	if player:
 		var keys:Array = player.data.keys
@@ -39,8 +44,10 @@ func _process(delta: float) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	player = body
+	player.interactable_entered.emit(self)
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
+	player.interactable_exited.emit(self)
 	player = null
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

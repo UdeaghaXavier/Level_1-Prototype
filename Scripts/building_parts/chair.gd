@@ -2,8 +2,10 @@ extends RigidBody3D
 
 var player: CharacterBody3D
 
+@onready var data = Props.new()
+
 func _ready() -> void:
-	pass # Replace with function body.
+	data._name = "chair"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -30,8 +32,10 @@ func _process(delta: float) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	player = body
+	player.interactable_entered.emit(self)
+	
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	player.body.sit_state = 0
-	
+	player.interactable_exited.emit(self)
 	player = null

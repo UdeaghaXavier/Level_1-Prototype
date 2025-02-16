@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4etf4mjkjd05"]
+
+[ext_resource type="Script" path="res://Scripts/props/vent.gd" id="1_smggh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3jnf"]
+resource_name = "doors for green"
+cull_mode = 2
+albedo_color = Color(0.186482, 0.484585, 0.0106978, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8fs0s"]
+_surfaces = [{
+"aabb": AABB(-0.875046, -3.33371, -5.00333, 1.71409, 6.53027, 10.1427),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 0, 0, 3, 0, 2, 0),
+"name": "doors for green",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 123, 255, 123, 255, 147, 248, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 68, 11, 68, 11, 141, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3xcu1"]
+resource_name = "Hideout test glb_Cube_024"
+_surfaces = [{
+"aabb": AABB(-0.875046, -3.33371, -5.00333, 1.71409, 6.53027, 10.1427),
+"attribute_data": PackedByteArray(21, 105, 128, 251, 85, 125, 96, 251, 96, 125, 62, 247, 250, 105, 65, 247),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 0, 0, 3, 0, 2, 0),
+"material": SubResource("StandardMaterial3D_x3jnf"),
+"name": "doors for green",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 146, 207, 123, 255, 123, 255, 147, 248, 146, 207, 255, 255, 255, 255, 0, 0, 146, 207, 68, 11, 68, 11, 141, 0, 146, 207, 42, 217, 168, 205, 42, 217, 168, 205, 42, 217, 168, 205, 42, 217, 168, 205)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_8fs0s")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0lc2s"]
+size = Vector3(1, 6.76712, 9.8418)
+
+[node name="vent" type="StaticBody3D" groups=["vent"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.1809, -4.51065, 64.5859)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_smggh")
+
+[node name="vent_cover" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_3xcu1")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.977049, 0.213013, 0, -0.213013, 0.977049, 0, 0, 0, 1, 0.0776443, -0.0441284, -0.0869293)
+shape = SubResource("BoxShape3D_0lc2s")

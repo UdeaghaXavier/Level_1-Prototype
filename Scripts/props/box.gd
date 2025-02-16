@@ -2,10 +2,12 @@ extends CharacterBody3D
 
 var is_pushing = false
 var pusher:CharacterBody3D = null
+@onready var data = Props.new()
 
 const pivot_distance = 1.2
 
 func _ready() -> void:
+	data._name = "box"
 	for pivot in $Pivots.get_children():
 		if pivot.position.x != 0:
 			pivot.position.x = pivot_distance * (-1 if pivot.position.x < 0 else 1)

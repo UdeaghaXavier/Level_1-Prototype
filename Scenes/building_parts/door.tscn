@@ -130,6 +130,8 @@ mesh = SubResource("ArrayMesh_je6c8")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Door/door frame"]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door/door frame/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qs5dx")
@@ -143,6 +145,7 @@ mesh = SubResource("ArrayMesh_uqnvh")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Door/door/door1"]
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door/door/door1/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_noxxt")
