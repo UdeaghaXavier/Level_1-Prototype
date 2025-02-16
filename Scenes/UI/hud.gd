@@ -50,7 +50,6 @@ func _on_ajoke_interactable_entered(prop) -> void:
 func _on_ajoke_interactable_exited(prop) -> void:
 	prop_node = null
 
-
 func _on_resume_pressed() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	$AnimationPlayer.play_backwards("fade_in")
