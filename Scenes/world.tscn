@@ -17,18 +17,23 @@ sky = SubResource("Sky_s02xx")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="Node3D" type="Node3D"]
+[node name="World" type="Node3D"]
+process_mode = 3
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+process_mode = 1
 environment = SubResource("Environment_bojjs")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+process_mode = 1
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 44.7424, 0)
 shadow_enabled = true
 
 [node name="Hideout test glb" parent="." instance=ExtResource("1_owbsu")]
+process_mode = 1
 
 [node name="Ajoke" parent="." instance=ExtResource("2_bb4xg")]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1392, 31.7702, 33.6195)
 
 [node name="HUD" parent="." instance=ExtResource("3_fdleq")]

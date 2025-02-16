@@ -1,9 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyc420n5lxyjd"]
+[gd_scene load_steps=13 format=3 uid="uid://cyc420n5lxyjd"]
 
 [ext_resource type="Script" path="res://Scenes/UI/hud.gd" id="1_he0yv"]
+[ext_resource type="SystemFont" uid="uid://bg1frjlher4lv" path="res://Scenes/UI/label_font.tres" id="2_5i8fm"]
+[ext_resource type="StyleBox" uid="uid://dqdj2y57bh5k4" path="res://Scenes/UI/normal_label.tres" id="2_tlfl3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aovie"]
-bg_color = Color(0.6, 0.6, 0.6, 0.121569)
+[sub_resource type="LabelSettings" id="LabelSettings_2ger4"]
+font = ExtResource("2_5i8fm")
+font_size = 20
+font_color = Color(0.775063, 0.775063, 0.775063, 1)
+outline_size = 1
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrrol"]
+bg_color = Color(0.171933, 0.168317, 0.168317, 0.792157)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nb5cx"]
+bg_color = Color(0.6, 0.6, 0.6, 0.282353)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -22,17 +45,65 @@ shadow_color = Color(0, 0, 0, 0.423529)
 shadow_size = 1
 shadow_offset = Vector2(3, 3)
 
-[sub_resource type="SystemFont" id="SystemFont_v6mwr"]
+[sub_resource type="SystemFont" id="SystemFont_1jke8"]
+font_names = PackedStringArray("Courier New")
+font_weight = 999
+font_stretch = 200
+multichannel_signed_distance_field = true
+oversampling = 10.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_ceyho"]
-font = SubResource("SystemFont_v6mwr")
-font_size = 20
+[sub_resource type="SystemFont" id="SystemFont_omwkb"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_gny3r"]
+font = SubResource("SystemFont_omwkb")
+font_size = 50
 font_color = Color(0.775063, 0.775063, 0.775063, 1)
-outline_size = 1
-shadow_size = 5
+outline_size = 3
+outline_color = Color(0.314316, 0.314316, 0.314316, 1)
+shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 2)
+
+[sub_resource type="Animation" id="Animation_mmujo"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b4vik"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eldsu"]
+_data = {
+"RESET": SubResource("Animation_b4vik"),
+"fade_in": SubResource("Animation_mmujo")
+}
 
 [node name="HUD" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,10 +119,79 @@ offset_left = 768.0
 offset_top = 37.0
 offset_right = 1125.0
 offset_bottom = 111.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_aovie")
+theme_override_styles/normal = ExtResource("2_tlfl3")
 text = "Hello"
-label_settings = SubResource("LabelSettings_ceyho")
+label_settings = SubResource("LabelSettings_2ger4")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vrrol")
+
+[node name="Resume" type="Button" parent="CanvasLayer/Control/Panel"]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -18.0
+offset_right = 112.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5i8fm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nb5cx")
+theme_override_styles/normal = ExtResource("2_tlfl3")
+text = "RESUME"
+
+[node name="quit" type="Button" parent="CanvasLayer/Control/Panel"]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = 66.0
+offset_right = 112.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_1jke8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nb5cx")
+theme_override_styles/normal = ExtResource("2_tlfl3")
+text = "QUIT"
+
+[node name="paused" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_top = 164.0
+offset_right = 1152.0
+offset_bottom = 275.0
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_gny3r")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eldsu")
+}
+
+[connection signal="pressed" from="CanvasLayer/Control/Panel/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/quit" to="." method="_on_quit_pressed"]

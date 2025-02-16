@@ -10,6 +10,18 @@ func _process(delta: float) -> void:
 	else:
 		$CanvasLayer/Label.hide()
 		$CanvasLayer/Label.text = ""
+		
+	if Input.get_action_strength("pause"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		if not get_tree().paused:
+			$AnimationPlayer.play("fade_in")
+			await $AnimationPlayer.animation_finished
+			get_tree().paused = true
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+			$AnimationPlayer.play_backwards("fade_in")
+			await $AnimationPlayer.animation_finished
+			get_tree().paused = false
 
 func get_message():
 	var n = prop_node.data._name
@@ -37,3 +49,13 @@ func _on_ajoke_interactable_entered(prop) -> void:
 
 func _on_ajoke_interactable_exited(prop) -> void:
 	prop_node = null
+
+
+func _on_resume_pressed() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	$AnimationPlayer.play_backwards("fade_in")
+	await $AnimationPlayer.animation_finished
+	get_tree().paused = false
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
